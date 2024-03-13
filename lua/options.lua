@@ -59,4 +59,16 @@ vim.opt.scrolloff = 10
 -- Who wants horizontal diffs?
 vim.opt.diffopt:append 'vertical'
 
+-- Add CDPATH.
+-- Search through: parent directories, development root, and (finally) the HOME directory.
+vim.opt.cdpath = {
+  '',
+  '.',
+  '..',
+  '../..',
+  '../../..',
+  '/mnt/wsl/Code/V2',
+  os.getenv 'HOME',
+}
+
 -- vim: ts=2 sts=2 sw=2 et
