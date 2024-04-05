@@ -53,9 +53,6 @@ vim.opt.inccommand = 'split'
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
--- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
-
 -- Who wants horizontal diffs?
 vim.opt.diffopt:append 'vertical'
 
