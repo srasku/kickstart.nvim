@@ -57,10 +57,13 @@ vim.opt.diffopt:append 'vertical'
 -- Add CDPATH from environment
 local cdpath_table = { '' }
 ---@diagnostic disable-next-line: param-type-mismatch
-for path in string.gmatch(os.getenv 'CDPATH', '[^:]+') do
-  table.insert(cdpath_table, path)
+local cdpath = os.getenv 'CDPATH'
+if cdpath then
+  for path in string.gmatch(cdpath, '[^:]+') do
+    table.insert(cdpath_table, path)
+  end
+  vim.opt.cdpath = cdpath_table
 end
-vim.opt.cdpath = cdpath_table
 
 -- Ignore all whitespace changes
 vim.opt.diffopt:append 'iwhiteall'
