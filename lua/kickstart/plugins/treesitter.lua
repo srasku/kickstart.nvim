@@ -2,6 +2,10 @@ return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
