@@ -3,6 +3,13 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- Use spaces instead of tabs
+
+vim.opt.expandtab = true
+--
+-- Default to 4-space indents
+vim.opt.shiftwidth = 4
+
 -- List all matches without completing, then each full match
 vim.opt.wildmode = { 'longest', 'list' }
 
